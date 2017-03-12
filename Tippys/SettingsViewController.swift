@@ -60,6 +60,9 @@ class SettingsViewController: UIViewController {
         
         defaults.synchronize()
     }
+    
+    
+        
 
     
 }

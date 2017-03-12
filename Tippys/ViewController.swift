@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var peopleField: UITextField!
     
+    @IBOutlet var tipView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         peopleField.text = String("1")
@@ -28,6 +31,14 @@ class ViewController: UIViewController {
         defaults.set("0",forKey:"tip_control")
         defaults.synchronize()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tipLabel.text = String(format: "%@", currencyFormatter(num: 0))
+        totalLabel.text = String(format: "%@", currencyFormatter(num: 0))
+        shareLabel.text = String(format: "%@", currencyFormatter(num: 0))
+        billField.becomeFirstResponder()
+        
+        
+        
     }
 
     
@@ -40,8 +51,13 @@ class ViewController: UIViewController {
     @IBAction func onTap(_ sender: Any) {
         
         view.endEditing(true)
+        
     }
 
+    
+    
+   
+    
     @IBAction func calculateTip(_ sender: Any) {
         
         peopleField.isUserInteractionEnabled = true
@@ -52,11 +68,29 @@ class ViewController: UIViewController {
 
         let total = bill + tip
         let person = Double(peopleField.text!) ?? 0
-        let share = total/person
+        var share = Double(0)
+        if(person>0){
+        share = total/person
+        }
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
-        shareLabel.text = String(format: "$%.2f", share)
+        tipLabel.text = String(format: "%@", currencyFormatter(num: tip))
+        totalLabel.text = String(format: "%@", currencyFormatter(num: total))
+        shareLabel.text = String(format: "%@", currencyFormatter(num: share))
+        
+        
+    }
+    
+    
+    func currencyFormatter(num : Double)-> String{
+        
+        let number = NSDecimalNumber(decimal: Decimal(num))
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = Locale.current
+        
+        let result = numberFormatter.string(from: number)
+        return result!
+        
     }
     
     
@@ -66,8 +100,21 @@ class ViewController: UIViewController {
         let intValue = defaults.integer(forKey: "tip_control")
         
         tipControl.selectedSegmentIndex = intValue
+        
         peopleField.text = defaults.string(forKey: "person")
+        
+        
+        
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
     
 }
 

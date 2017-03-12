@@ -15,6 +15,7 @@
 		8D1B95ED1E7478DA00251D28 /* TippysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1B95EC1E7478DA00251D28 /* TippysTests.swift */; };
 		8D1B95F81E7478DA00251D28 /* TippysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1B95F71E7478DA00251D28 /* TippysUITests.swift */; };
 		8D1B96061E74803100251D28 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1B96051E74803100251D28 /* SettingsViewController.swift */; };
+		8D1B96081E74F9DF00251D28 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 8D1B96071E74F9DF00251D28 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8D1B95F71E7478DA00251D28 /* TippysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TippysUITests.swift; sourceTree = "<group>"; };
 		8D1B95F91E7478DA00251D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1B96051E74803100251D28 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8D1B96071E74F9DF00251D28 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		8D1B95CB1E7478DA00251D28 = {
 			isa = PBXGroup;
 			children = (
+				8D1B96071E74F9DF00251D28 /* README */,
 				8D1B95D61E7478DA00251D28 /* Tippys */,
 				8D1B95EB1E7478DA00251D28 /* TippysTests */,
 				8D1B95F61E7478DA00251D28 /* TippysUITests */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1B96081E74F9DF00251D28 /* README in Resources */,
 				8D1B95E21E7478DA00251D28 /* LaunchScreen.storyboard in Resources */,
 				8D1B95DF1E7478DA00251D28 /* Assets.xcassets in Resources */,
 				8D1B95DD1E7478DA00251D28 /* Main.storyboard in Resources */,
